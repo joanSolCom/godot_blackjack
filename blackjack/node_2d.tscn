@@ -1,0 +1,154 @@
+[gd_scene load_steps=6 format=3 uid="uid://ct0fx1q7b86nv"]
+
+[ext_resource type="Texture2D" uid="uid://d23410fc8j70s" path="res://green-background-with-card-playing-suits-gamble-velvet-texture-poker-table-decoration-with-gambling-and-bets-vector.jpg" id="1_1dun0"]
+[ext_resource type="Script" path="res://card.gd" id="1_fowsd"]
+[ext_resource type="Script" path="res://world.gd" id="2_l136h"]
+[ext_resource type="PackedScene" uid="uid://1th44u6eckvf" path="res://card.tscn" id="3_wffl3"]
+[ext_resource type="Texture2D" uid="uid://doe38hux322jp" path="res://assets/images/cards/cardBack_red4.png" id="5_swmkh"]
+
+[node name="WORLD" type="Sprite2D"]
+position = Vector2(578.75, 321.125)
+scale = Vector2(0.598177, 0.684783)
+texture = ExtResource("1_1dun0")
+script = ExtResource("2_l136h")
+
+[node name="Dealer" type="Node2D" parent="." groups=["dealer_card_group"]]
+scale = Vector2(1, 1)
+
+[node name="Card1_dealer" parent="Dealer" instance=ExtResource("3_wffl3")]
+position = Vector2(-141.68, -296.627)
+scale = Vector2(0.927, 0.908)
+
+[node name="Card2_dealer" parent="Dealer" instance=ExtResource("3_wffl3")]
+position = Vector2(-1.25385, -296.627)
+scale = Vector2(0.908, 0.907)
+
+[node name="Card3_dealer" type="Sprite2D" parent="Dealer"]
+position = Vector2(135.829, -296.627)
+scale = Vector2(0.908, 0.908)
+texture = ExtResource("5_swmkh")
+script = ExtResource("1_fowsd")
+
+[node name="Card4_dealer" type="Sprite2D" parent="Dealer"]
+position = Vector2(274.584, -296.627)
+scale = Vector2(0.908, 0.908)
+texture = ExtResource("5_swmkh")
+script = ExtResource("1_fowsd")
+
+[node name="Card5_dealer" type="Sprite2D" parent="Dealer"]
+position = Vector2(413.339, -296.627)
+scale = Vector2(0.908, 0.908)
+texture = ExtResource("5_swmkh")
+script = ExtResource("1_fowsd")
+
+[node name="Card6_dealer" type="Sprite2D" parent="Dealer"]
+position = Vector2(553.766, -296.627)
+scale = Vector2(0.908, 0.908)
+texture = ExtResource("5_swmkh")
+script = ExtResource("1_fowsd")
+
+[node name="Player" type="Node2D" parent="."]
+
+[node name="Card1_player" type="Sprite2D" parent="Player"]
+position = Vector2(-141.68, 192.579)
+scale = Vector2(0.908, 0.908)
+texture = ExtResource("5_swmkh")
+script = ExtResource("1_fowsd")
+
+[node name="Card2_player" type="Sprite2D" parent="Player"]
+position = Vector2(-1.25403, 192.579)
+scale = Vector2(0.908, 0.908)
+texture = ExtResource("5_swmkh")
+script = ExtResource("1_fowsd")
+
+[node name="Card3_player" type="Sprite2D" parent="Player"]
+position = Vector2(139.173, 192.579)
+scale = Vector2(0.908, 0.908)
+texture = ExtResource("5_swmkh")
+script = ExtResource("1_fowsd")
+
+[node name="Card4_player" type="Sprite2D" parent="Player"]
+position = Vector2(276.256, 192.579)
+scale = Vector2(0.908, 0.908)
+texture = ExtResource("5_swmkh")
+script = ExtResource("1_fowsd")
+
+[node name="Card5_player" type="Sprite2D" parent="Player"]
+position = Vector2(416.683, 192.579)
+scale = Vector2(0.908, 0.908)
+texture = ExtResource("5_swmkh")
+script = ExtResource("1_fowsd")
+
+[node name="Card6_player" type="Sprite2D" parent="Player"]
+position = Vector2(555.438, 192.579)
+scale = Vector2(0.908, 0.908)
+texture = ExtResource("5_swmkh")
+script = ExtResource("1_fowsd")
+
+[node name="HIT" type="Button" parent="."]
+offset_left = 720.94
+offset_top = -198.786
+offset_right = 856.94
+offset_bottom = -62.7857
+theme_override_font_sizes/font_size = 50
+text = "HIT"
+
+[node name="RESTART" type="Button" parent="."]
+offset_left = 675.803
+offset_top = 306.484
+offset_right = 909.803
+offset_bottom = 442.484
+theme_override_font_sizes/font_size = 50
+text = "RESTART"
+
+[node name="STAY" type="Button" parent="."]
+offset_left = 720.94
+offset_top = -54.2143
+offset_right = 860.94
+offset_bottom = 82.7858
+theme_override_font_sizes/font_size = 50
+text = "STAY"
+
+[node name="Label_score_dealer" type="Label" parent="."]
+z_index = 4096
+offset_left = -838.798
+offset_top = -328.754
+offset_right = -506.798
+offset_bottom = -259.754
+theme_override_font_sizes/font_size = 50
+text = "Dealer Score: "
+
+[node name="score_dealer" type="Label" parent="."]
+offset_left = -482.717
+offset_top = -330.214
+offset_right = -315.717
+offset_bottom = -255.214
+theme_override_font_sizes/font_size = 50
+text = "0"
+
+[node name="Label_score_player" type="Label" parent="."]
+offset_left = -838.798
+offset_top = 160.452
+offset_right = -505.798
+offset_bottom = 249.452
+theme_override_font_sizes/font_size = 50
+text = "Player Score:"
+
+[node name="score_player" type="Label" parent="."]
+offset_left = -486.06
+offset_top = 161.913
+offset_right = -356.06
+offset_bottom = 230.913
+theme_override_font_sizes/font_size = 50
+text = "0"
+
+[node name="status" type="Label" parent="."]
+offset_left = -845.485
+offset_top = -125.77
+offset_right = -400.485
+offset_bottom = 20.2302
+theme_override_font_sizes/font_size = 100
+
+[connection signal="pressed" from="HIT" to="." method="_on_hit_pressed"]
+[connection signal="pressed" from="RESTART" to="." method="_on_restart_pressed"]
+[connection signal="pressed" from="STAY" to="." method="_on_stay_pressed"]
